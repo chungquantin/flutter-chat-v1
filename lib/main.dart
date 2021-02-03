@@ -8,9 +8,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Simple Chat App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.blue,
+        accentColor: Color(0xFFFEF9EB)
       ),
       home: HomeScreen(),
     );
