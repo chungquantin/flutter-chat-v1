@@ -41,13 +41,14 @@ class FavContacts extends StatelessWidget {
             itemCount: MockData().favorites.length,
             itemBuilder: (BuildContext context, int index) {
               return Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
                   child: FavContactBubble(
                       imagePath: MockData().favorites[index].imageUrl,
                       name: MockData().favorites[index].name));
             },
           ),
-        )
+        ),
+        
       ],
     );
   }

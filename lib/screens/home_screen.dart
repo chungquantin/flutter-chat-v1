@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui_starter/components/category_selector.dart';
 import 'package:flutter_chat_ui_starter/components/fav_contact_bubble.dart';
 import 'package:flutter_chat_ui_starter/components/fav_contacts.dart';
+import 'package:flutter_chat_ui_starter/components/message_section.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -44,9 +45,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   bottomRight: Radius.zero,
                 ),
               ),
-              child: FavContacts()
+              child: Column(children: [
+                FavContacts(),
+                MessageSection()
+              ],) 
             ),
-          )
+          ),
         ],
       )),
     );
