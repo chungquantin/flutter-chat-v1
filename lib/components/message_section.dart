@@ -9,7 +9,6 @@ class MessageSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: Container(
-      padding: EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
