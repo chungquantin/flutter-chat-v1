@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui_starter/components/message_item.dart';
-import 'package:flutter_chat_ui_starter/models/message_model.dart';
+import 'package:flutter_chat_ui_starter/constants/mock_data.dart';
 
 class MessageSection extends StatelessWidget {
   const MessageSection({Key key}) : super(key: key);
@@ -9,7 +9,7 @@ class MessageSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: Container(
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+      padding: EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -24,7 +24,7 @@ class MessageSection extends StatelessWidget {
               scrollDirection: Axis.vertical,
               itemCount: MockData().messages.length,
               itemBuilder: (BuildContext context, int index) {
-                return MessageItem(message: MockData().messages[index]);
+                return MessageItem(message: MockData().chats[index]);
               })),
     ));
   }

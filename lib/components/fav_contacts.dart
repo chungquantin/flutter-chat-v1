@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_chat_ui_starter/components/fav_contact_bubble.dart';
-import 'package:flutter_chat_ui_starter/models/message_model.dart';
+import 'package:flutter_chat_ui_starter/constants/mock_data.dart';
 
 class FavContacts extends StatelessWidget {
   final EdgeInsetsGeometry sectionPadding = EdgeInsets.fromLTRB(20, 10, 20, 0);
