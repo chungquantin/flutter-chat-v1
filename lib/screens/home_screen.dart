@@ -21,10 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0.0,
-        title: Text(
-          "Chats",
-          style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.bold),
-        ),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.search), onPressed: () {})
         ],
