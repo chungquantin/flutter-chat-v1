@@ -12,7 +12,7 @@ class _ChatAreaState extends State<ChatArea> {
   Widget build(BuildContext context) {
     return Expanded(
       child:  Padding(
-        padding: EdgeInsets.only(bottom: 90),
+        padding: EdgeInsets.only(bottom: 80),
         child: ClipRRect(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30.0),

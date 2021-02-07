@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_chat_ui_starter/models/user_model.dart';
 
 class Message {
@@ -5,7 +6,7 @@ class Message {
   final String
       time; // Would usually be type DateTime or Firebase Timestamp in production apps
   final String text;
-  final bool isLiked;
+  bool isLiked;
   final bool unread;
 
   Message({
@@ -15,4 +16,5 @@ class Message {
     this.isLiked,
     this.unread,
   });
+
 }
