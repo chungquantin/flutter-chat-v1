@@ -1,4 +1,3 @@
-
 import 'package:flutter_chat_ui_starter/models/message_model.dart';
 import 'package:flutter_chat_ui_starter/models/user_model.dart';
 
@@ -125,4 +124,13 @@ class MockData {
       ),
     ];
   }
+
+  void sendMessage(String message) {
+      this.messages.add(Message(
+          isLiked: false,
+          sender: currentUser,
+          text: message,
+          time: DateTime.now().toString(),
+          unread: true));
+    }
 }

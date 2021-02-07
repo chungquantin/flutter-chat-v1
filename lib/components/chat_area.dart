@@ -11,21 +11,18 @@ class _ChatAreaState extends State<ChatArea> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child:  Padding(
-        padding: EdgeInsets.only(bottom: 80),
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30.0),
-            topRight: Radius.circular(30.0),
-            bottomLeft: Radius.zero,
-            bottomRight: Radius.zero,
-          ),
-          child: ListView.builder(
-              itemCount: MockData().messages.length,
-              itemBuilder: (BuildContext context, int index) {
-                return ChatItem(message: MockData().messages[index]);
-              }),
+      child: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30.0),
+          topRight: Radius.circular(30.0),
+          bottomLeft: Radius.zero,
+          bottomRight: Radius.zero,
         ),
+        child: ListView.builder(
+            itemCount: MockData().messages.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ChatItem(message: MockData().messages[index]);
+            }),
       ),
     );
   }
