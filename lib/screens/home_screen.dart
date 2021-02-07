@@ -1,9 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui_starter/components/category_selector.dart';
 import 'package:flutter_chat_ui_starter/components/fav_contacts.dart';
 import 'package:flutter_chat_ui_starter/components/message_section.dart';
+import 'package:flutter_chat_ui_starter/constants/mock_data.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -39,17 +38,36 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
-        centerTitle: true,
-        backgroundColor: Theme.of(context).primaryColor,
-        elevation: 0.0,
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.search), onPressed: () {})
+      // backgroundColor: Theme.of(context).primaryColor,
+      // appBar: AppBar(
+      //   leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+      //   centerTitle: true,
+      //   backgroundColor: Theme.of(context).primaryColor,
+      //   elevation: 0.0,
+      //   actions: <Widget>[
+      //     IconButton(icon: Icon(Icons.search), onPressed: () {})
+      //   ],
+      // ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            flexibleSpace: FlexibleSpaceBar(
+              centerTitle: true,
+              title: Text("Hello World"),
+            ),
+            pinned: true,
+            floating: true,
+            expandedHeight: 200,
+          ),
+          // CategorySelector(),
+          SliverList(
+              delegate:
+                  SliverChildBuilderDelegate((BuildContext context, int index) {
+            return Container(
+                height: 200, child: Text(MockData().chats[index].text));
+          }, childCount: MockData().chats.length))
         ],
       ),
-      body: SafeArea(child: _buildBody()),
     );
   }
 }
