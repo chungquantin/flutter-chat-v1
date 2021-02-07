@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui_starter/components/category_selector.dart';
-import 'package:flutter_chat_ui_starter/components/fav_contact_bubble.dart';
 import 'package:flutter_chat_ui_starter/components/fav_contacts.dart';
 import 'package:flutter_chat_ui_starter/components/message_section.dart';
 
@@ -12,6 +11,31 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // ignore: unused_element
+  _buildBody() {
+    return Column(
+      children: <Widget>[
+        CategorySelector(),
+        Expanded(
+          child: Container(
+              height: 500,
+              decoration: BoxDecoration(
+                color: Theme.of(context).accentColor,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30.0),
+                  topRight: Radius.circular(30.0),
+                  bottomLeft: Radius.zero,
+                  bottomRight: Radius.zero,
+                ),
+              ),
+              child: Column(
+                children: [FavContacts(), MessageSection()],
+              )),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,30 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(icon: Icon(Icons.search), onPressed: () {})
         ],
       ),
-      body: SafeArea(
-          child: Column(
-        children: <Widget>[
-          CategorySelector(),
-          Expanded(
-            child: Container(
-              height: 500,
-              decoration: BoxDecoration(
-                color: Theme.of(context).accentColor,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30.0),
-                  topRight: Radius.circular(30.0),
-                  bottomLeft: Radius.zero,
-                  bottomRight: Radius.zero,
-                ),
-              ),
-              child: Column(children: [
-                FavContacts(),
-                MessageSection()
-              ],) 
-            ),
-          ),
-        ],
-      )),
+      body: SafeArea(child: _buildBody()),
     );
   }
 }
