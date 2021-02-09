@@ -7,24 +7,9 @@ class MessageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30.0),
-          topRight: Radius.circular(30.0),
-          bottomLeft: Radius.zero,
-          bottomRight: Radius.zero,
-        ),
-      ),
-      child: Container(
-          child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: MockData().messages.length,
-              itemBuilder: (BuildContext context, int index) {
-                return MessageItem(message: MockData().chats[index]);
-              })),
-    ));
+    return SliverList(
+        delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
+      return MessageItem(message: MockData().chats[index]);
+    }, childCount: MockData().chats.length));
   }
 }
