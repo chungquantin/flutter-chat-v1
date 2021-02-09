@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui_starter/constants/mock_data.dart';
-import 'package:flutter_chat_ui_starter/models/message_model.dart';
 
 // ignore: must_be_immutable
 class MessageComposer extends StatefulWidget {
   String messageInput = "";
   MessageComposer({Key key}) : super(key: key);
+  
 
   @override
   _MessageComposerState createState() => _MessageComposerState();
